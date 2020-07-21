@@ -1,4 +1,5 @@
 # Got a Mask?
 
-![](OpenCV-Implementation/OpenCVDemo.mov)
+<video src="OpenCV-Implementation/OpenCVDemo.mov" controls preload> </video>
+
 

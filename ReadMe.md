@@ -1,5 +1,7 @@
 # Got a Mask?
 
-<video src="OpenCV-Implementation/OpenCVDemo.mov" controls preload> </video>
+<video width = "100%" height="100%" controls preload>
+  <source src="OpenCV-Implementation/OpenCVDemo.mov" ></source> 
+</video>
 
 

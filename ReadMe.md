@@ -6,7 +6,7 @@ This project is a means to screen medical and non personell to make sure that th
 
 In the near future I hope to release this on a Raspberry Pi 4 with a Coral Edge TPU in order to isolate this from my computer and have it run on a separate device with its own camera and display. <br/> <br/>
 
-![gif](media/Mask_glove.gif)
+![gif](media/shortened.gif)
 
 
 

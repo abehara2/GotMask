@@ -1,10 +1,12 @@
 # Got a Mask?
 
-So far, I have completed a purely OpenCV implementation of the script using C++ and Python. Here is a video of the real time object detection code run using my Macbook Webcam on my little sister. I will be writing implementations with YOLO based R-CNN's on masked-person data sets later in order to increase robustness and accuracy of the detection. <br/> <br/>
+This project is a means to screen medical and non personell to make sure that they are wearing adequate equipment prior to entering a building. The capture is segmented into two segments for hand detection which was passed through a CNN built with Tensorflow and Keras. The transfer learning model is held in the ```model.h5``` file if you want to run your own glove detection for a project.
 
-The gif quality is quite rough as Github only accepts smaller videos and files, but if you want to see a clearer video with the text not as pixelated check out this public YouTube URL: [https://www.youtube.com/watch?v=OMjjTuqWezg](https://www.youtube.com/watch?v=OMjjTuqWezg)<br/> <br/>
+ The mask detection is done with a HAAR Cascade Classifier implemented in OpenCV. It tracks the mouth and frontal face and if there is a mouth contained in the frontal face it identifies the person as unmasked. If two gloves and a masked face are detected in the frame, the system will print out that all safety checks have passed. <br/>
 
-![gif](media/OpenCVDemo.gif)
+In the near future I hope to release this on a Raspberry Pi 4 with a Coral Edge TPU in order to isolate this from my computer and have it run on a separate device with its own camera and display. <br/> <br/>
+
+![gif](media/Mask_glove.gif)
 
 
 

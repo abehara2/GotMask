@@ -16,7 +16,7 @@ The capture is segmented into two segments for hand detection which was passed t
 
 ### Downloads
 
-The major installs to run the file ```./detect/Final/detect_integrated.py``` successfully on the Raspberry Pi are Tensorflow, Keras and OpenCV. The install for opencv is fairly straightforward as all it needs is a pip install. Due to the ARM architecture of the board, the install of Tensorflow and Keras are a little more complicated run the following bashc commands in order to install all the necessary dependencies
+The major installs to run the file ```./detect/Final/detect_integrated.py``` successfully on the Raspberry Pi are Tensorflow, Keras and OpenCV. The install for opencv is fairly straightforward as all it needs is a pip install. Due to the ARM architecture of the board, the install of Tensorflow and Keras are a little more complicated run the following bash commands in order to install all the necessary dependencies
 
 ```
 pip install opencv-contrib-python==4.1.0.25
@@ -41,7 +41,6 @@ Navigate to ```5 Interfacing Options``` and follow the instructions to enable ``
 
 ### Assembly of Hardware
 
-The circuit was assembeled using the Sunfounder Kit. I used the breadboard, jumper cables, and the LCD1602 display. The circuit itself is very simple and takes <1 minute to install correctly. Below is an image of the circuit. Additionally, there is  USB camera that is plugged into the Pi board which Debian Linux will pick up as the camera to use to open the capture. <br/>
+The circuit was assembeled using the Sunfounder Kit. I used the breadboard, jumper cables, and the LCD1602 display. The circuit itself is very simple and takes <1 minute to install correctly. Below is an image of the circuit. Additionally, there is  USB camera that is plugged into the Pi board which Debian Linux will pick up as the camera to use to open the capture. The circuit depicted also has a Coral TPU displayed but as of right now, it is not being implemented. <br/>
 
 ![gif](media/circuit.JPG)
-

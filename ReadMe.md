@@ -33,11 +33,7 @@ sudo python3 -m pip install tensorflow-2.0.0-cp37-none-linux_armv7l.whl
 ```
 ### Configuration
 
-The circuit I built require use of an i2c interface and external camera. Run the following command to open the configuration.
-
-```sudo raspi-config```
-
-Navigate to ```5 Interfacing Options``` and follow the instructions to enable ```P1 Camera``` and ```P5 I2C```. Toggling on the camera will force the system to reboot to apply the changes
+The circuit I built require use of an i2c interface and external camera. Run ```sudo raspi-config``` to open the configuration.Navigate to ```5 Interfacing Options``` and follow the instructions to enable ```P1 Camera``` and ```P5 I2C```. Toggling on the camera will force the system to reboot to apply the changes
 
 ### Assembly of Hardware
 

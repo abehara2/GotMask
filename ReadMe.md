@@ -2,7 +2,7 @@
 
 This project is a means to screen medical and non personell to make sure that they are wearing adequate equipment prior to entering a building. 
 
-##Overview
+## Overview
 
 The capture is segmented into two segments for hand detection which was passed through a CNN built with ```Tensorflow``` and ```Keras```. The transfer learning model is held in the ```./detect/Tensorflow/model.h5``` file if you want to run your own glove detection for a project.
 

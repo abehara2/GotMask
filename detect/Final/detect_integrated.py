@@ -162,6 +162,7 @@ def detect():
         BGRcolor = (0,0,0)
         img = cv2.resize(left_hand,(150,150))
         img = np.reshape(img,[1,150,150,3])
+        img = tf.cast(img, tf.float32)
         classes = model.predict(img)
         if (classes[0][0] == 1) :
             left_prediction = "Wear a glove!"
@@ -180,6 +181,7 @@ def detect():
         right_prediction = ""
         img = cv2.resize(right_hand,(150,150))
         img = np.reshape(img,[1,150,150,3])
+        img = tf.cast(img, tf.float32)
         classes = model.predict(img)
         if (classes[0][0] == 1) :
             right_prediction = "Wear a glove!"

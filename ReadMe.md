@@ -1,6 +1,6 @@
 # Got a Mask?
 
-This project is a means to screen medical and non personell to make sure that they are wearing adequate equipment prior to entering a building. 
+This project is a means to screen medical and non personell to make sure that they are wearing adequate equipment prior to entering a building. For the pure facemask detection there are implementations in C++ and Python, but because the glove detection uses the Tensorflow Python API everything else has to be run in Python.
 
 ## Overview
 

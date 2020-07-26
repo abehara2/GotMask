@@ -1,6 +1,6 @@
 # Got a Mask?
 
-This project is a means to screen medical and non personell to make sure that they are wearing adequate equipment prior to entering a building. 
+This project is a means to screen medical and non personell to make sure that they are wearing adequate equipment prior to entering a building. For the pure facemask detection there are implementations in C++ and Python, but because the glove detection uses the Tensorflow Python API everything else has to be run in Python.
 
 ## Overview
 
@@ -33,14 +33,14 @@ sudo python3 -m pip install tensorflow-2.0.0-cp37-none-linux_armv7l.whl
 ```
 ### Configuration
 
-The circuit I built require use of an i2c interface and external camera. Run the following command to open the configuration.
-
-```sudo raspi-config```
-
-Navigate to ```5 Interfacing Options``` and follow the instructions to enable ```P1 Camera``` and ```P5 I2C```. Toggling on the camera will force the system to reboot to apply the changes
+The circuit I built require use of an i2c interface and external camera. Run ```sudo raspi-config``` to open the configuration.Navigate to ```5 Interfacing Options``` and follow the instructions to enable ```P1 Camera``` and ```P5 I2C```. Toggling on the camera will force the system to reboot to apply the changes
 
 ### Assembly of Hardware
 
-The circuit was assembeled using the Sunfounder Kit. I used the breadboard, jumper cables, and the LCD1602 display. The circuit itself is very simple and takes <1 minute to install correctly. Below is an image of the circuit. Additionally, there is  USB camera that is plugged into the Pi board which Debian Linux will pick up as the camera to use to open the capture. The circuit depicted also has a Coral TPU displayed but as of right now, it is not being implemented. <br/>
+The circuit was assembeled using the Sunfounder Kit. I used the breadboard, jumper cables, and the LCD1602 display. The circuit itself is very simple and takes <1 minute to install correctly. Below is an image of the circuit. Additionally, there is  USB camera that is plugged into the Pi board which Debian Linux will pick up as the camera to use to open the capture.
 
-![gif](media/circuit.JPG)
+<img src='media/circuit.JPG' width="500"> </img>
+
+### Optional
+
+Coral TPU

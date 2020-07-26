@@ -6,7 +6,7 @@ This project is a means to screen medical and non personell to make sure that th
 
 The capture is segmented into two segments for hand detection which was passed through a CNN built with ```Tensorflow``` and ```Keras```. The transfer learning model is held in the ```./detect/Tensorflow/model.h5``` file if you want to run your own glove detection for a project.
 
- The mask detection is done with a HAAR Cascade Classifier implemented in ```OpenCV```. It tracks the mouth and frontal face and if there is a mouth contained in the frontal face it identifies the person as unmasked. If two gloves and a masked face are detected in the frame, the system will print out that all safety checks have passed. <br/>
+ The mask detection is done with a HAAR Cascade Classifier implemented in ```OpenCV```. It tracks the mouth and frontal face and if there is a mouth contained in the frontal face it identifies the person as unmasked. If two gloves and a masked face are detected in the frame, the system will print out that all safety checks have passed. The standalone python script can be found in ```./detect/Final/detect_isolated.py``` if you want to run this code without the hardware<br/>
 
 
 ![gif](media/shortened.gif)
@@ -16,7 +16,7 @@ The capture is segmented into two segments for hand detection which was passed t
 
 ### Downloads
 
-The major installs to run the file ```./detect/integrate.py``` successfully on the Raspberry Pi are Tensorflow, Keras and OpenCV. The install for opencv is fairly straightforward as all it needs is a pip install. Due to the ARM architecture of the board, the install of Tensorflow and Keras are a little more complicated run the following bashc commands in order to install all the necessary dependencies
+The major installs to run the file ```./detect/Final/detect_integrated.py``` successfully on the Raspberry Pi are Tensorflow, Keras and OpenCV. The install for opencv is fairly straightforward as all it needs is a pip install. Due to the ARM architecture of the board, the install of Tensorflow and Keras are a little more complicated run the following bashc commands in order to install all the necessary dependencies
 
 ```
 pip install opencv-contrib-python==4.1.0.25

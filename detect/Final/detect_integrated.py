@@ -18,24 +18,24 @@ def write_word(addr, data):
 def send_command(comm):
     # Send bit7-4 firstly
     buf = comm & 0xF0
-    buf |= 0x04               
+    buf |= 0x04              
     write_word(LCD_ADDR ,buf)
     time.sleep(0.002)
-    buf &= 0xFB               
+    buf &= 0xFB              
     write_word(LCD_ADDR ,buf)
 
     # Send bit3-0 secondly
     buf = (comm & 0x0F) << 4
-    buf |= 0x04               
+    buf |= 0x04              
     write_word(LCD_ADDR ,buf)
     time.sleep(0.002)
-    buf &= 0xFB               
+    buf &= 0xFB              
     write_word(LCD_ADDR ,buf)
 
 def send_data(data):
     # Send bit7-4 firstly
     buf = data & 0xF0
-    buf |= 0x05               
+    buf |= 0x05              
     write_word(LCD_ADDR ,buf)
     time.sleep(0.002)
     buf &= 0xFB                
@@ -100,8 +100,18 @@ def write(x, y, str):
 def setup():
     init(0x27, 1)
     write(0, 0, 'Got a Mask?')
-    write(1, 1, 'And your gloves too?')
-    time.sleep(2)
+    write(0, 1, 'And your gloves?')
+    time.sleep(4)
+    clear()sudo apt-get install -y libhdf5-dev libc-ares-dev libeigen3-dev
+python3 -m pip install keras_applications==1.0.8 --no-deps
+python3 -m pip install keras_preprocessing==1.1.0 --no-deps
+python3 -m pip install h5py==2.9.0
+sudo apt-get install -y openmpi-bin libopenmpi-dev
+sudo apt-get install -y libatlas-base-dev
+python3 -m pip install -U six wheel mock
+wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v2.0.0/tensorflow-2.0.0-cp37-none-linux_armv7l.whl
+python3 -m pip uninstall tensorflow
+python3 -m pip install tensorflow-2.0.0-cp37-none-linux_armv7l.whl
 
 def destroy():
     pass  
@@ -110,8 +120,8 @@ def destroy():
 #define detection function
 def detect():
     #initialize HAAR classifiers
-    mouth_classifier = cv2.CascadeClassifier('/Users/ashankbehara/GitHub/GotMask/detect/OpenCV/HAAR Cascade/haarcascade_mcs_mouth.xml')
-    face_classifier = cv2.CascadeClassifier('/Users/ashankbehara/GitHub/GotMask/detect/OpenCV/HAAR Cascade/haarcascade_frontalface_default.xml')
+    mouth_classifier = cv2.CascadeClassifier('../OpenCV/HAAR/haarmouth.xml')
+    face_classifier = cv2.CascadeClassifier('../OpenCV/HAAR/haarface.xml')
 
     capture = cv2.VideoCapture(0)
     if  not capture.isOpened():
@@ -124,7 +134,7 @@ def detect():
         ret, color = capture.read()
         color = cv2.flip(color,1)
         frame = cv2.cvtColor(color, cv2.COLOR_BGR2GRAY)
-        
+       
         faces = face_classifier.detectMultiScale(frame, 1.3, 5)    
         mouths = mouth_classifier.detectMultiScale(frame,1.3,5)
 
@@ -144,13 +154,13 @@ def detect():
 
 
         cap_width  = int(capture.get(3))
-        cap_height = int(capture.get(4)) 
+        cap_height = int(capture.get(4))
 
 
         #get cropped images
         left_hand  = color[int(cap_height/5):int(cap_height*4/5), 0:int(cap_width/3)]
         right_hand =  color[int(cap_height/5):int(cap_height*4/5), int(cap_width*2/3):cap_width]
-        
+       
         #tensorflow CNN prediction
         model = tf.keras.models.load_model('../Tensorflow/model.h5')
         model.compile(loss='binary_crossentropy',
@@ -203,7 +213,7 @@ def detect():
             cv2.putText(color, "Safety Check Failed", (int(cap_width/3) + 30, int(cap_height/10)) , cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,255), 2, cv2.LINE_AA)
             clear()
             write(0, 0, 'You are not safe!')
-            
+           
         cv2.imshow("Frame", color)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             destroy()
@@ -213,11 +223,12 @@ def detect():
     cv2.destroyAllWindows()
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     try:
         setup()
         detect()
         while True:
             pass
     except KeyboardInterrupt:
+        clear()
         destroy()

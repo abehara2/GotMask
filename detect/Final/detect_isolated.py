@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import tensorflow as tf
 
-mouth_classifier = cv2.CascadeClassifier('/Users/ashankbehara/GitHub/GotMask/detect/OpenCV/HAAR Cascade/haarcascade_mcs_mouth.xml')
-face_classifier = cv2.CascadeClassifier('/Users/ashankbehara/GitHub/GotMask/detect/OpenCV/HAAR Cascade/haarcascade_frontalface_default.xml')
+mouth_classifier = cv2.CascadeClassifier('../OpenCV/HAAR/haarmouth.xml')
+face_classifier = cv2.CascadeClassifier('../OpenCV/HAAR/haarface.xml')
 
 capture = cv2.VideoCapture(0)
 if  not capture.isOpened():

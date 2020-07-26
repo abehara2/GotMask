@@ -43,4 +43,4 @@ Navigate to ```5 Interfacing Options``` and follow the instructions to enable ``
 
 The circuit was assembeled using the Sunfounder Kit. I used the breadboard, jumper cables, and the LCD1602 display. The circuit itself is very simple and takes <1 minute to install correctly. Below is an image of the circuit. Additionally, there is  USB camera that is plugged into the Pi board which Debian Linux will pick up as the camera to use to open the capture. The circuit depicted also has a Coral TPU displayed but as of right now, it is not being implemented. <br/>
 
-<img src='media/circuit.jpg' style='width:60%, margin-left: 20%, margin-right: 20%'> </img>
+<img src='media/circuit.JPG' style='width:60%, margin-left: 20%, margin-right: 20%'> </img>

@@ -2,8 +2,14 @@ import cv2
 import numpy as np
 import tensorflow as tf
 
+# Initialize classifiers
 mouth_classifier = cv2.CascadeClassifier('../OpenCV/HAAR/haarmouth.xml')
 face_classifier = cv2.CascadeClassifier('../OpenCV/HAAR/haarface.xml')
+
+model = tf.keras.models.load_model('../Tensorflow/model.h5')
+model.compile(loss='binary_crossentropy',
+            optimizer='rmsprop',
+            metrics=['accuracy'])
 
 capture = cv2.VideoCapture(0)
 if  not capture.isOpened():
@@ -43,11 +49,6 @@ while (capture.isOpened()):
     left_hand  = color[int(cap_height/5):int(cap_height*4/5), 0:int(cap_width/3)]
     right_hand =  color[int(cap_height/5):int(cap_height*4/5), int(cap_width*2/3):cap_width]
     
-    #tensorflow CNN prediction
-    model = tf.keras.models.load_model('../Tensorflow/model.h5')
-    model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
-              metrics=['accuracy'])
 
     #left prediction
     left_prediction = ""
